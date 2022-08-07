@@ -1,0 +1,8 @@
+body {
+color: blue;
+}
+
+.meals {
+  display: flex;
+  flex-direction: row;
+}
