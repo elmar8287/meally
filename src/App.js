@@ -31,7 +31,7 @@ const App = () => {
     setMealId(e)
   }
   
-  useEffect(()=> {
+  useEffect((cat, info)=> {
     if(cat!==null) {
       axios
       .get(`https://themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`)
@@ -44,33 +44,6 @@ const App = () => {
   
     }
   },[mealId])
-
-
-
-
-  const ingredients = [
-    "strIngredient1",
-    "strIngredient2",
-    "strIngredient3",
-    "strIngredient4",
-    "strIngredient5",
-    "strIngredient5",
-    "strIngredient6",
-    "strIngredient7",
-    "strIngredient8",
-    "strIngredient9",
-    "strIngredient10",
-    "strIngredient11",
-    "strIngredient12",
-    "strIngredient13",
-    "strIngredient14",
-    "strIngredient15",
-    "strIngredient16",
-    "strIngredient17",
-    "strIngredient18",
-    "strIngredient19",
-    "strIngredient20",
-  ]
 
   if(cat===null) {
     <p>Loading</p>
