@@ -1,8 +1,13 @@
-body {
-color: blue;
+.main {
+display: flex;
+flex-direction: column;
 }
 
 .meals {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.meal-item {
+  margin: 5px;
 }
