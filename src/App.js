@@ -21,8 +21,6 @@ const App = () => {
       .get("https://themealdb.com/api/json/v1/1/filter.php?i=" + input)
       .then((resp)=>{
         setCat(resp.data)
-        
-        
       })
   },[input])
   console.log(cat)
@@ -31,25 +29,23 @@ const App = () => {
     setMealId(e)
   }
   
-  useEffect((cat, info)=> {
-    if(cat!==null) {
-      axios
-      .get(`https://themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`)
+  // useEffect((cat, info)=> {
+  //   if(cat!==null) {
+  //     axios
+  //     .get(`https://themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`)
       
-      .then((resp)=>{
-        setInfo(resp.data)
+  //     .then((resp)=>{
+  //       setInfo(resp.data)
 
-      console.log("info", info)
-      })
+  //     console.log("info", info)
+  //     })
   
-    }
-  },[mealId])
+  //   }
+  // },[mealId])
 
   if(cat===null) {
     <p>Loading</p>
-  } else if(info===null) {
-    <p>Loading info</p> }
-      else {
+  } else {
   return (
     <div>
       <button type="button" onClick={chickenHandle}>Chicken</button>
@@ -57,19 +53,19 @@ const App = () => {
 
           <div>Found {cat.meals.length} reciepts</div>
           <div className="meals">
-          {
+          { cat.meals !== undefined && cat.meals !== null &&
             cat.meals.map((e, index)=>(
-              <div key={index}>
-                <img src={e.strMealThumb} width="100" height="100" alt="meal"/>
+              <div key={index} className="meal-item">
+                <img src={e.strMealThumb} alt="meal" className="meal-img"/>
                 <h3>{e.strMeal}</h3>
-                <button onClick={()=>{getInfo(e.idMeal)}}>Get ID</button>
+                {/* <button onClick={()=>{getInfo(e.idMeal)}}>Get ID</button> */}
               </div>
             ))
           }
           </div>
-          {console.log(info.meals[0])}
+          {/* {console.log(info.meals[0])}
 
-          { info.meals[0]!==undefined &&
+          { info.meals[0]!==undefined && info.meals[0]!==null &&
             <div>
             <h3>Area: {info.meals[0].strArea}</h3>
             <h4>Category: {info.meals[0].strCategory}</h4>
@@ -83,7 +79,7 @@ const App = () => {
               <li>{info.meals[0].strIngredient7}</li>
             </ul>
           </div>
-      }
+      } */}
 
 
 
