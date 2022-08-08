@@ -5,24 +5,13 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import { Button, CardActionArea, CardActions } from '@mui/material';
-import Box from '@mui/material/Box';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
+import { Button, CardActionArea } from '@mui/material';
 
 
 
 const App = () => {
-  const [age, setAge] = useState('');
-
-  const handleChange = (event) => {
-    setAge(event.target.value);
-  };
   const [cat, setCat] = useState(null)
   const [input, setInput] = useState("beef")
-  const [mealId, setMealId] = useState("")
   const [info, setInfo] = useState(null)
 
   const chickenHandle = () => {
@@ -42,42 +31,30 @@ const App = () => {
   },[input])
   console.log(cat)
 
-  const getInfo = (e) => {
-    setMealId(e)
-  }
-  
-  // useEffect((cat, info)=> {
-  //   if(cat!==null) {
-  //     axios
-  //     .get(`https://themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`)
-      
-  //     .then((resp)=>{
-  //       setInfo(resp.data)
+  const [addInfo, setAddInfo] = useState("")
 
-  //     console.log("info", info)
-  //     })
-  
-  //   }
-  // },[mealId])
+  useEffect(()=> {
+      axios
+      .get("https://themealdb.com/api/json/v1/1/lookup.php?i=" + addInfo)
+      
+      .then((resp)=>{
+        setInfo(resp.data)
+      })
+  },[addInfo])
+
+
+
+  const addInfoHandle = (e) => {
+    console.log(e)
+    setAddInfo(e)
+
+  }
 
   if(cat===null) {
     <p>Loading</p>
   } else {
   return (
     <div className="main">
-                <FormControl fullWidth>
-            <InputLabel id="demo-simple-select-label">Meal Category</InputLabel>
-            <Select
-              labelId="demo-simple-select-label"
-              id="demo-simple-select"
-              label="Age"
-              onChange={handleChange}
-            >
-              <MenuItem value={10}>Beef</MenuItem>
-              <MenuItem value={20}>Chichen</MenuItem>
-              <MenuItem value={30}>Thirty</MenuItem>
-            </Select>
-          </FormControl>
           <div>Found {cat.meals.length} reciepts</div>
           <div className="meals">
 
@@ -98,13 +75,15 @@ const App = () => {
                     </Typography>
                   </CardContent>
                 </CardActionArea>
+                <Button onClick={()=>{addInfoHandle(e.idMeal)}}>More detail</Button>
               </Card>
             ))
+            
           }
           </div>
-          {/* {console.log(info.meals[0])}
-
-          { info.meals[0]!==undefined && info.meals[0]!==null &&
+        
+          {
+            info!==null && info.meals!==undefined &&
             <div>
             <h3>Area: {info.meals[0].strArea}</h3>
             <h4>Category: {info.meals[0].strCategory}</h4>
@@ -118,7 +97,8 @@ const App = () => {
               <li>{info.meals[0].strIngredient7}</li>
             </ul>
           </div>
-      } */}
+          }
+
 
 
 
