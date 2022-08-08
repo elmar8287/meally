@@ -14,13 +14,13 @@ const App = () => {
   const [input, setInput] = useState("beef")
   const [info, setInfo] = useState(null)
 
-  const chickenHandle = () => {
-    setInput("chicken")
-  }
+  // const chickenHandle = () => {
+  //   setInput("chicken")
+  // }
 
-  const beefHandle = () => {
-    setInput("beef")
-  }
+  // const beefHandle = () => {
+  //   setInput("beef")
+  // }
 
   useEffect(()=> {
     axios
