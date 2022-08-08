@@ -28,7 +28,7 @@ const App = () => {
       .then((resp)=>{
         setCat(resp.data)
       })
-  },[input])
+  },[])
   console.log(cat)
 
   const [addInfo, setAddInfo] = useState("")
@@ -59,9 +59,9 @@ const App = () => {
           <div className="meals">
 
           { cat.meals !== undefined && cat.meals !== null &&
-            cat.meals.map((e, index)=>(
+            cat.meals.map((e)=>(
 
-              <Card key={index} className="meal-item">
+              <Card key={e.idMeal} className="meal-item">
                 <CardActionArea>
                   <CardMedia
                     component="img"
@@ -83,10 +83,13 @@ const App = () => {
           </div>
         
           {
-            info!==null && info.meals!==undefined &&
+            info.meals[0]!==null && info.meals[0]!==undefined &&
             <div>
+              <img src={info.meals[0].strMealThumb} alt={info.meals[0].strMeal}/>
+              <h2>{info.meals[0].strMeal}</h2>
             <h3>Area: {info.meals[0].strArea}</h3>
             <h4>Category: {info.meals[0].strCategory}</h4>
+            <a href={info.meals[0].strYoutube}>Watch on Youtube</a>
             <ul>
               <li>{info.meals[0].strIngredient1}</li>
               <li>{info.meals[0].strIngredient2}</li>
@@ -97,11 +100,9 @@ const App = () => {
               <li>{info.meals[0].strIngredient7}</li>
             </ul>
           </div>
+          
           }
-
-
-
-
+          {console.log(info.meals[0])}
     </div>
   );
 };

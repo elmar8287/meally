@@ -10,8 +10,8 @@
 
 
 <!-- ![screenshot](./public/assets/dreamcarsautosales.png) -->
-
-## The [Demo Live](https://meally.netlify.app/) version is available
+## The Demo Live version is NOT yet available
+<!-- ## The [Demo Live](https://meally.netlify.app/) version is available -->
 
 ## Project status: on going
 
@@ -37,7 +37,7 @@
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/elmar8287/dreamcar-auto-sales/issues).
+Feel free to check the [issues page](https://github.com/elmar8287/meally/issues).
 
 ## Show your support
 
