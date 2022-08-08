@@ -1,8 +1,25 @@
 import axios from 'axios';
 import React, {useState, useEffect} from 'react';
 import "./App.css";
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Typography from '@mui/material/Typography';
+import { Button, CardActionArea, CardActions } from '@mui/material';
+import Box from '@mui/material/Box';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select, { SelectChangeEvent } from '@mui/material/Select';
+
+
 
 const App = () => {
+  const [age, setAge] = useState('');
+
+  const handleChange = (event) => {
+    setAge(event.target.value);
+  };
   const [cat, setCat] = useState(null)
   const [input, setInput] = useState("beef")
   const [mealId, setMealId] = useState("")
@@ -47,19 +64,41 @@ const App = () => {
     <p>Loading</p>
   } else {
   return (
-    <div>
-      <button type="button" onClick={chickenHandle}>Chicken</button>
-      <button type="button" onClick={beefHandle}>Beef</button>
-
+    <div className="main">
+                <FormControl fullWidth>
+            <InputLabel id="demo-simple-select-label">Meal Category</InputLabel>
+            <Select
+              labelId="demo-simple-select-label"
+              id="demo-simple-select"
+              label="Age"
+              onChange={handleChange}
+            >
+              <MenuItem value={10}>Beef</MenuItem>
+              <MenuItem value={20}>Chichen</MenuItem>
+              <MenuItem value={30}>Thirty</MenuItem>
+            </Select>
+          </FormControl>
           <div>Found {cat.meals.length} reciepts</div>
           <div className="meals">
+
           { cat.meals !== undefined && cat.meals !== null &&
             cat.meals.map((e, index)=>(
-              <div key={index} className="meal-item">
-                <img src={e.strMealThumb} alt="meal" className="meal-img"/>
-                <h3>{e.strMeal}</h3>
-                {/* <button onClick={()=>{getInfo(e.idMeal)}}>Get ID</button> */}
-              </div>
+
+              <Card key={index} className="meal-item">
+                <CardActionArea>
+                  <CardMedia
+                    component="img"
+                    height="140"
+                    image={e.strMealThumb}
+                    alt="green iguana"
+                  />
+                  <CardContent>
+                    <Typography gutterBottom variant="h5" component="div">
+                    {e.strMeal}
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+              </Card>
             ))
           }
           </div>
