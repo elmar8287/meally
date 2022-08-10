@@ -49,6 +49,7 @@ const App = () => {
   } else {
   return (
     <div className="main">
+      <div className="meals">
               {/* <div>Found {cat.meals.length} reciepts</div> */}
               {console.log("inside of return", cat)}
           { cat.meals !== null && cat!==undefined && 
@@ -78,12 +79,15 @@ const App = () => {
         {
           modal ?
           <div className="modal">
-          <button onClick={modalHandle}>Close</button>
+            <div  className="modal-button">
+            <button onClick={modalHandle}>Close</button>
+            </div>
+          
           <Detail mealId={addInfo} modal={modal}/> 
           </div>
           : null
         }
-         
+         </div>
     </div>
   );
 };

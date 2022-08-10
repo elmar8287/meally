@@ -22,7 +22,7 @@ if(info===null) {
     <div>
       {info.meals!==null && info.meals!==undefined && 
       <div>
-      <img src={info.meals[0].strMealThumb} alt={info.meals[0].strMeal}/>
+      <img src={info.meals[0].strMealThumb} alt={info.meals[0].strMeal} width="100%" height="100%"/>
       <h2>{info.meals[0].strMeal}</h2>
     <h3>Area: {info.meals[0].strArea}</h3>
     <h4>Category: {info.meals[0].strCategory}</h4>
