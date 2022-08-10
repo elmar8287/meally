@@ -1,4 +1,4 @@
-#Meally - Your reciept jornal
+# Meally - Your reciept jornal
 
 ## This is an meal reciept app, where you can get meals reciept considering of the Area, Category and main ingrediente.
 
