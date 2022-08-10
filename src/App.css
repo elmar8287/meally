@@ -11,3 +11,23 @@ flex-direction: column;
 .meal-item {
   margin: 5px;
 }
+
+.modal {
+  height: 80%;
+  width: 500px;
+  position: fixed;
+  z-index: 15;
+  top: 7%;
+  left: 30%;
+  background-color: #fcfcfc;
+  overflow-x: hidden;
+  backdrop-filter: blur(10px);
+  opacity: 100%;
+  border-radius: 5px;
+  border: solid gray;
+  padding: 20px;
+}
+
+.modal-button {
+  margin-bottom: 15px;
+}

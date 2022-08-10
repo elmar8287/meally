@@ -6,13 +6,15 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Button, CardActionArea } from '@mui/material';
+import Detail from './Components/Detail/Detail';
 
 
 
 const App = () => {
   const [cat, setCat] = useState(null)
   const [input, setInput] = useState("beef")
-  const [info, setInfo] = useState(null)
+  const [modal, setModal] = useState(false)
+  const [addInfo, setAddInfo] = useState("")
 
   // const chickenHandle = () => {
   //   setInput("chicken")
@@ -24,44 +26,37 @@ const App = () => {
 
   useEffect(()=> {
     axios
-      .get("https://themealdb.com/api/json/v1/1/filter.php?i=" + input)
+      .get("https://themealdb.com/api/json/v1/1/filter.php?i="+input)
       .then((resp)=>{
         setCat(resp.data)
+        console.log("cat", cat)
       })
   },[input])
-  console.log(cat)
-
-  const [addInfo, setAddInfo] = useState("")
-
-  useEffect(()=> {
-      axios
-      .get("https://themealdb.com/api/json/v1/1/lookup.php?i=" + addInfo)
-      
-      .then((resp)=>{
-        setInfo(resp.data)
-      })
-  },[addInfo])
-
-
+  console.log("after useEffect",cat)
 
   const addInfoHandle = (e) => {
-    console.log(e)
+    console.log("the id in addinfo`handle",e)
     setAddInfo(e)
-
+    setModal(!modal)
   }
 
-  if(cat===null) {
+  const modalHandle = () => {
+    setModal(!modal)
+  }
+
+  if (cat===null) {
     <p>Loading</p>
   } else {
   return (
     <div className="main">
-          <div>Found {cat.meals.length} reciepts</div>
-          <div className="meals">
+      <div className="meals">
+              {/* <div>Found {cat.meals.length} reciepts</div> */}
+              {console.log("inside of return", cat)}
+          { cat.meals !== null && cat!==undefined && 
+          
+            cat.meals.map((e)=>(
 
-          { cat.meals !== undefined && cat.meals !== null &&
-            cat.meals.map((e, index)=>(
-
-              <Card key={index} className="meal-item">
+              <Card key={e.idMeal} className="meal-item">
                 <CardActionArea>
                   <CardMedia
                     component="img"
@@ -79,29 +74,20 @@ const App = () => {
               </Card>
             ))
             
+            
           }
+        {
+          modal ?
+          <div className="modal">
+            <div  className="modal-button">
+            <button onClick={modalHandle}>Close</button>
+            </div>
+          
+          <Detail mealId={addInfo} modal={modal}/> 
           </div>
-        
-          {
-            info!==null && info.meals!==undefined &&
-            <div>
-            <h3>Area: {info.meals[0].strArea}</h3>
-            <h4>Category: {info.meals[0].strCategory}</h4>
-            <ul>
-              <li>{info.meals[0].strIngredient1}</li>
-              <li>{info.meals[0].strIngredient2}</li>
-              <li>{info.meals[0].strIngredient3}</li>
-              <li>{info.meals[0].strIngredient4}</li>
-              <li>{info.meals[0].strIngredient5}</li>
-              <li>{info.meals[0].strIngredient6}</li>
-              <li>{info.meals[0].strIngredient7}</li>
-            </ul>
-          </div>
-          }
-
-
-
-
+          : null
+        }
+         </div>
     </div>
   );
 };
