@@ -6,6 +6,7 @@ flex-direction: column;
 .meals {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
+  padding: 9px;
 }
 
 .meal-item {
@@ -64,4 +65,12 @@ body {
   margin-right: 15px;
   color: white;
   font-size: 30px;
+}
+
+.meals-found {
+  background-color: rgb(76, 4, 4);
+  padding: 10px;
+  text-align: center;
+  height: 20px;
+  color: white;
 }

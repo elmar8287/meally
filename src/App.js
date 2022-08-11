@@ -17,7 +17,7 @@ const App = () => {
   const [modal, setModal] = useState(false)
   const [addInfo, setAddInfo] = useState("")
 
-  const [option, setOption] = useState("")
+  const [option, setOption] = useState("beef")
   const optionHandle = (e) => {
     setOption(e.target.value)
   }
@@ -80,15 +80,14 @@ const App = () => {
       </div>
     </div>
 
-
+    { cat.meals !== null && cat!==undefined && <div className="meals-found">Found {cat.meals.length} reciepts</div>}
 
       <div className="meals">
-              {/* <div>Found {cat.meals.length} reciepts</div> */}
-              {console.log("inside of return", cat)}
+
           { cat.meals !== null && cat!==undefined && 
           
             cat.meals.map((e)=>(
-
+              
               <Card key={e.idMeal} className="meal-item">
                 <CardActionArea>
                   <CardMedia
