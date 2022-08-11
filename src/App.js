@@ -8,6 +8,7 @@ import Typography from '@mui/material/Typography';
 import { Button, CardActionArea } from '@mui/material';
 import Detail from './Components/Detail/Detail';
 import Filter from './Components/Filter/Filter';
+import Header from './Components/Header/Header';
 
 
 
@@ -56,7 +57,7 @@ const App = () => {
   } else {
   return (
     <div className="main">
-          
+          <Header />
 
           <div className="filtering">
       <h3 className="cat-title">Select the category</h3>
