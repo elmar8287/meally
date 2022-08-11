@@ -7,6 +7,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Button, CardActionArea } from '@mui/material';
 import Detail from './Components/Detail/Detail';
+import Filter from './Components/Filter/Filter';
 
 
 
@@ -49,6 +50,7 @@ const App = () => {
   } else {
   return (
     <div className="main">
+          <Filter />
       <div className="meals">
               {/* <div>Found {cat.meals.length} reciepts</div> */}
               {console.log("inside of return", cat)}
