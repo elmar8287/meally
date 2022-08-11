@@ -1,0 +1,17 @@
+.header {
+  padding: 20px;
+  height: 590px;
+  background: url(https://i.dietdoctor.com/wp-content/uploads/2020/12/Easy-Keto-Chili-Bowl-h1-.jpg?auto=compress%2Cformat&w=1200&h=800&fit=crop);
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.header h1 {
+  margin-top: -10px;
+  font-size: 90px;
+  margin-bottom: -20px;
+}
+
+.header p {
+  color: rgb(196, 7, 7);
+}
