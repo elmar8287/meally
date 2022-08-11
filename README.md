@@ -8,10 +8,8 @@
 - `useSelector()`
 - `useDispatch()`
 
-
-<!-- ![screenshot](./public/assets/dreamcarsautosales.png) -->
-## The Demo Live version is NOT yet available
-<!-- ## The [Demo Live](https://meally.netlify.app/) version is available -->
+# The [Demo Live](https://shimmering-cajeta-12ff6e.netlify.app/) version is available
+![screenshot](./public/meally.png)
 
 ## Project status: on going
 
