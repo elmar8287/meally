@@ -1,12 +1,14 @@
 .main {
 display: flex;
 flex-direction: column;
+background-color: rgb(207, 207, 207);
 }
 
 .meals {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   padding: 9px;
+  background-color: rgb(207, 207, 207);
 }
 
 .meal-item {
@@ -72,4 +74,88 @@ body {
   text-align: center;
   height: 20px;
   color: white;
+}
+
+.show-more-section {
+  text-align: center;
+  padding: 20px;
+  background-color: rgb(207, 207, 207);
+}
+
+.show-more {
+  text-align: center;
+  border: none;
+  background-color: rgb(209, 20, 20);
+  color: white;
+  font-size: 20px;
+  height: 50px;
+  width: 200px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.meal-name {
+  font-size: 10px;
+}
+
+
+
+/* the carousel styling */
+
+.item1 {
+  background: url(https://www.ishayu-llc.com/wp-content/uploads/2018/09/Beef.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: 10px;
+}
+
+.item2 {
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/3/3e/Fried-Chicken-Leg.jpg);
+  background-size: 90%;
+  background-repeat: no-repeat;
+  background-position: 10px;
+}
+
+.item3 {
+  background-image: url(https://img.freepik.com/premium-photo/fillet-of-salmon-isolated-on-white-background_228338-125.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: 10px;
+}
+
+.item4 {
+  background-image: url(https://media.istockphoto.com/photos/sliced-raw-pork-meat-with-rosemary-isolated-on-white-background-top-picture-id1162194568?k=20&m=1162194568&s=612x612&w=0&h=-a7tsUFBIWw-xM7ZCxtzeqfhKxrdeFjANZO-1q8CyJM=);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: 10px;
+}
+
+.item5 {
+  background-image: url(https://www.healio.com/~/media/slack-news/stock-images/nephrology/v/vegetables-and-fruit_143521939.jpeg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: 10px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(5, 2fr);
+  padding: 30px;
+  gap: 10px;
+  height: 200px;
+  text-align: center;
+  color: gray;
+}
+
+.ing-title {
+  text-align: center;
+}
+
+.ing-section {
+  display: flex;
+  flex-direction: column;
+  border-top-left-radius: 100px;
+  border-bottom-right-radius: 100px;
+  background-color: rgb(255, 255, 255);
+  margin: 15px;
 }
