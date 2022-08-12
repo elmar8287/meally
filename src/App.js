@@ -129,6 +129,10 @@ const App = () => {
             <div className="item4">Pork</div>
             <div className="item5">Vegetables</div>
           </div>
+          <div className="select-ing">
+            <input type="text" />
+          <button className="show-more">See results</button>
+          </div>
         </div>
     </div>
   );

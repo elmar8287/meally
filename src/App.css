@@ -79,7 +79,6 @@ body {
 .show-more-section {
   text-align: center;
   padding: 20px;
-  background-color: rgb(207, 207, 207);
 }
 
 .show-more {
@@ -140,7 +139,6 @@ body {
 .grid-container {
   display: grid;
   grid-template-columns: repeat(5, 2fr);
-  padding: 30px;
   gap: 10px;
   height: 200px;
   text-align: center;
@@ -149,6 +147,9 @@ body {
 
 .ing-title {
   text-align: center;
+  margin-top: 40px;
+  margin-bottom: 50px;
+  font-size: 40px;
 }
 
 .ing-section {
@@ -158,4 +159,19 @@ body {
   border-bottom-right-radius: 100px;
   background-color: rgb(255, 255, 255);
   margin: 15px;
+  text-align: center;
+}
+
+.select-ing {
+  text-align: center;
+  padding-bottom: 50px;
+  padding-top: 50px;
+  display: inline-block;
+
+}
+
+.select-ing input {
+  width: 500px;
+  margin-right: 10px;
+  height: 45px;
 }
