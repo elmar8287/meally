@@ -8,7 +8,7 @@
 - `useSelector()`
 - `useDispatch()`
 
-# The [Demo Live](https://shimmering-cajeta-12ff6e.netlify.app/) version is available
+# The [Demo Live](https://aesthetic-treacle-452962.netlify.app/) version is available
 ![screenshot](./public/meally.png)
 
 ## Project status: on going
