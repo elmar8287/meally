@@ -120,7 +120,7 @@ const App = () => {
           </div>
         <div className="ing-section">
           <div className="ing-title">
-          <h3>Wich ingeredients do you need?</h3>
+          <h3>Find your reciept by the ingredient</h3>
           </div>   
           <div className="grid-container">
             <div className="item1">Beef</div>

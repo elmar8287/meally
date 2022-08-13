@@ -156,9 +156,9 @@ body {
   display: flex;
   flex-direction: column;
   border-top-left-radius: 100px;
-  border-bottom-right-radius: 100px;
+  border-bottom-left-radius: 100px;
   background-color: rgb(255, 255, 255);
-  margin: 15px;
+  margin-left: 55px;
   text-align: center;
 }
 
@@ -174,4 +174,6 @@ body {
   width: 500px;
   margin-right: 10px;
   height: 45px;
+  border-radius: 5px;
+  border: solid rgb(186, 186, 186);
 }
