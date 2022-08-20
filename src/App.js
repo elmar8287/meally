@@ -101,11 +101,7 @@ const App = () => {
         {
           modal ?
           <div className="modal">
-            <div  className="modal-button">
-            <button onClick={modalHandle}>Close</button>
-            </div>
-          
-          <Detail mealId={addInfo} modal={modal}/> 
+            <Detail mealId={addInfo} modal={modal} close={modalHandle}/>
           </div>
           : null
         }
