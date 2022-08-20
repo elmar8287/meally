@@ -1,0 +1,64 @@
+.modal-header {
+  display:flex;
+  align-content: space-around;
+  position: fixed;
+  background-color: rgb(251, 205, 205);
+  width: 70%;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+.modal-header h2 {
+  width: 95%;
+  padding-left: 10px;
+}
+
+.modal-header span {
+  width: 5%;
+  text-align: center;
+  font-size: 30px;
+  padding: 10px;
+}
+
+.modal-area-cat {
+  display: flex;
+  align-content: space-around;
+}
+
+.modal-area-cat p {
+  margin-left: 10px;
+  background-color: rgb(173, 12, 12);
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 120px;
+}
+
+.modal-area-cat a {
+  margin-left: 10px;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.ing-list {
+  color: gray;
+  padding-left: 40px;
+  list-style: none;
+}
+
+.ingred {
+  display: flex;
+  align-content: space-around;
+}
+
+.ingred img {
+  margin-left: 70px;
+  border-radius: 10px;
+}
+
+.instruction {
+  color: gray;
+  padding: 20px;
+}
