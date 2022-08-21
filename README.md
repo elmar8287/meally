@@ -8,7 +8,7 @@
 - `useSelector()`
 - `useDispatch()`
 
-# The [Demo Live](https://joyful-semifreddo-58d82c.netlify.app/) version is available
+# The [Demo Live](https://curious-truffle-cead22.netlify.app/) version is available
 ![screenshot](./public/meally.png)
 
 ## Project status: on going
