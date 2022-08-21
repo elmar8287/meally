@@ -35,14 +35,6 @@
   cursor: pointer;
 }
 
-.modal-area-cat a {
-  margin-left: 10px;
-  color: white;
-  padding: 10px;
-  border-radius: 5px;
-  text-decoration: none;
-}
-
 .ing-list {
   color: gray;
   padding-left: 40px;
@@ -85,4 +77,10 @@
 .instruction-section {
   display: flex;
   flex-direction: column;
+}
+
+.frame {
+  border-radius: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
 }

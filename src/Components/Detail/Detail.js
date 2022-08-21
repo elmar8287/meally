@@ -18,8 +18,9 @@ const Detail = ({mealId, close}) => {
   },[mealId])
 console.log("first checking", info)
 
-const hight = {
-  hight: "50%"
+const getId = (url) => {
+  const videoId = url.split("=")
+  return videoId[1]
 }
 
 if(info===null) {
@@ -36,7 +37,6 @@ if(info===null) {
         <div className="modal-area-cat">
           <p>Area: {info.meals[0].strArea}</p>
           <p>Category: {info.meals[0].strCategory}</p>
-          <p><a href={info.meals[0].strYoutube}>Watch on YOUTUBE</a></p>
         </div>
         <h3 className="ing-list">Ingredients</h3>
         <div className="ingred">
@@ -84,7 +84,7 @@ if(info===null) {
             <li>{info.meals[0].strMeasure19}</li>
             <li>{info.meals[0].strMeasure20}</li>
           </ul>
-          <img src={info.meals[0].strMealThumb} alt={info.meals[0].strMeal} width="30%" height="30%"/>
+          <iframe className="frame" width="650" height="300" src={`https://www.youtube.com/embed/${getId(info.meals[0].strYoutube)}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         <div className="instruction-section">
         <h3 className="ing-list">Instructions</h3>
