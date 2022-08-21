@@ -2,7 +2,7 @@
   display:flex;
   align-content: space-around;
   position: fixed;
-  background-color: rgb(251, 205, 205);
+  background-color: rgb(246, 42, 42);
   width: 70%;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
@@ -32,6 +32,7 @@
   padding: 10px;
   border-radius: 5px;
   margin-top: 120px;
+  cursor: pointer;
 }
 
 .modal-area-cat a {
@@ -61,4 +62,27 @@
 .instruction {
   color: gray;
   padding: 20px;
+  height: 100px;
+}
+
+.show-more-detail {
+  border: none;
+  margin-top: -90px;
+  font-size: 20px;
+  background-color: rgb(173, 12, 12);
+  color: white;
+  border-radius: 5px;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.show-more-detail-null {
+  display: none;
+}
+
+.instruction-section {
+  display: flex;
+  flex-direction: column;
 }

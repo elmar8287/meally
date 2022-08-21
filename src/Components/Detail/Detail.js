@@ -2,10 +2,11 @@ import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import "./Detail.css"
 import { BsFillXCircleFill } from "react-icons/bs";
-import { TiSocialYoutube } from "react-icons/ti";
 
 const Detail = ({mealId, close}) => {
   const [info, setInfo] = useState(null)
+  const [more, setMore] = useState(200)
+  const [display, setDisplay] = useState(true)
 
   useEffect(()=> {
     axios
@@ -16,6 +17,10 @@ const Detail = ({mealId, close}) => {
     })
   },[mealId])
 console.log("first checking", info)
+
+const hight = {
+  hight: "50%"
+}
 
 if(info===null) {
   <p>Loading</p>
@@ -81,8 +86,17 @@ if(info===null) {
           </ul>
           <img src={info.meals[0].strMealThumb} alt={info.meals[0].strMeal} width="30%" height="30%"/>
         </div>
+        <div className="instruction-section">
         <h3 className="ing-list">Instructions</h3>
-        <p className="instruction">{info.meals[0].strInstructions}</p>
+        <p className="instruction">
+        {/* <div className={`instruction ${more? "show-more-detail" : ""}`}> */}
+            {info.meals[0].strInstructions.split("").slice(0, more).join("")}
+        </p>
+
+          <button className={`show-more-detail ${!display? "show-more-detail-null" : ""}`} onClick={()=> setMore(info.meals[0].strInstructions.length) || setDisplay(false)}>Show full instruction</button>
+
+
+        </div>
       </div>
       }
     </div>
