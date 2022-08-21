@@ -84,7 +84,13 @@ if(info===null) {
             <li>{info.meals[0].strMeasure19}</li>
             <li>{info.meals[0].strMeasure20}</li>
           </ul>
-          <iframe className="frame" width="650" height="300" src={`https://www.youtube.com/embed/${getId(info.meals[0].strYoutube)}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          {
+            info.meals[0].strYoutube ?
+            <iframe className="frame" width="650" height="300" src={`https://www.youtube.com/embed/${getId(info.meals[0].strYoutube)}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            :
+            null
+          }
+          
         </div>
         <div className="instruction-section">
         <h3 className="ing-list">Instructions</h3>
