@@ -1,6 +1,6 @@
-# Meally - Your reciept jornal
+# Meally - Your recipe jornal
 
-## This is an meal reciept app, where you can get meals reciept considering of the Area, Category and main ingrediente.
+## This is an meal recipe app, where you can get meals recipe considering of the Area, Category and main ingrediente.
 
 ### In this project I used React JS with hooks:
 - `useState()`
